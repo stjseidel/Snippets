@@ -15,16 +15,11 @@ Otherwise, you will not be able to login to the course.
  In that case, enter a longer time delay before the first screenshots.
 Retrieve html code from website, then remove html code from text.
 
-Problems:
-    - In some cases, the code fails when a unit summary is present.
-        Reason unkown, not yet fixed.
-        I used 'Single_URL_screenshotting.py' to create those screenshots
-
 To Do:
     - currently need to copy source code by hand into excel file.
       Change to either read source code from page,
       or copy source code and prepare file automatically.
-    - Screenshots are saved with 4 random chars and additional '.png'.
+    - Screenshots are saved with 8 random chars and additional '.png'.
       Prevent it, or rename it immediately.
 @author: stjseidel
 """
@@ -135,7 +130,7 @@ for i in range(len(base_list)):
     if last_was_link_list:
         last_was_link_list = False
         link_names[-1][-1].append(base_list[i])
-    elif i < len(base_list) - 3:
+    elif i < len(base_list) - 2:
         if is_NOT_a_link(base_list[i]) and is_NOT_a_link(base_list[i+1]):
             # this is a new chapter heading
             indent = 1
